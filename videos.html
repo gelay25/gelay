@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>Videos</title>
+<link rel="stylesheet" href="style2.css">
+<script src="https://kit.fontawesome.com/cf8c2f5103.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="header">
+            <img src="img/wc3.jpg" width="300px" height="90px">
+    </div>
+
+<div class="navbar">
+    <a href="home.html">Home</a>
+    <div class="dropdown">
+        <a href="profile.html">Profile</a></li>
+        <div class="dropdown-content">
+            <a href="pictures.html">Images</a>
+            <a href="videos.html">Videos</a>
+        </div>
+    </button>
+    </div>
+    <a href="about.html">About</a>
+</div>
+
+<div class="desc">Video Gallery</div>
+
+<div class="container">
+    <h1>五条悟</h1>
+    <div id="video_player">
+        <video controls poster="" class="video" id="video">
+            <source src="videos/gojo.mp4" type="video/mp4">
+            <source src="videos/gojosatoru.mp4" type="video/mp4">
+            <source src="videos/jjk.mp4" type="video/mp4">
+            <source src="videos/satoru.mp4" type="video/mp4">
+            <source src="videos/satorugojo.mp4" type="video/mp4">
+            <source src="videos/sg.mp4" type="video/mp4">
+        </video>
+        <div class="srollBox">
+            <div class="box">
+                <img src="video img/gojo.png">
+                <div class="caption">
+                    <h3>Satoru Gojo</h3>
+                    <a href="videos/gojo.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="video img/sg.png" >
+                <div class="caption">
+                    <h3>Satoru Gojo</h3>
+                    <a href="videos/gojosatoru.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="video img/satoru.png" >
+                <div class="caption">
+                    <h3>Satoru Gojo</h3>
+                    <a href="videos/jjk.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="video img/gojosatoru.png" >
+                <div class="caption">
+                    <h3>Satoru Gojo</h3>
+                    <a href="videos/satoru.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="video img/gs.png" >
+                <div class="caption">
+                    <h3>Satoru Gojo</h3>
+                    <a href="videos/satorugojo.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="video img/jjk.png" >
+                <div class="caption">
+                    <h3>Satoru Gojo</h3>
+                    <a href="videos/sg.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    let anchors = document.querySelectorAll('div .btn');
+let links = [...anchors];
+
+for (let i=0; i<links.length; i++) {
+    links[i].onclick = handler;
+}
+function handler(e) {
+    e.preventDefault();
+    let videotarget = this.getAttribute("href");
+    let filename = videotarget.substr(0, videotarget.lastIndexOf('.'));
+    let video = document.getElementById("video");
+    video.removeAttribute("poster");
+    let source = document.querySelectorAll("#video_player video source");
+    source[0].src = filename + ".mp4";
+    source[1].src = filename + ".m4v";
+    video.load();
+    video.play();
+}
+</script>
+    <div class="footer">
+        <i class="fa-brands fa-facebook" style="font-size: 24px;"></i>
+        <i class="fa-brands fa-instagram" style="font-size: 24px;"></i>
+        <i class="fa-brands fa-whatsapp" style="font-size: 24px;"></i>
+   </div>
+
+</body>
+</html>
